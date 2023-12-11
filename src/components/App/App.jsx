@@ -82,15 +82,15 @@ function App() {
   }, [notification]);
 
   const handleSearch = value => {
-    if (!value) {
-      setNotification({
-        type: 'info',
-        message: 'Please enter your search query!',
-      });
-      return;
-    }
-
-    if (value === query) {
+      if (!value.trim()) {
+        setNotification({
+          type: 'info',
+          message: 'Please enter your search query!',
+        });
+        return;
+      }
+   
+      if (value === query) {
       setNotification({
         type: 'info',
         message:
